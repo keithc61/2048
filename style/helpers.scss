@@ -8,7 +8,7 @@
   @if $exponent > 1 {
     @for $i from 2 through $exponent {
       $value: $value * $base; } }
-  // negitive intergers get divided. A number divided by itself is 1
+  // negative intergers get divided. A number divided by itself is 1
   @if $exponent < 1 {
     @for $i from 0 through -$exponent {
       $value: $value / $base; } }
