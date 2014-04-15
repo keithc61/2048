@@ -64,7 +64,7 @@ GameManager.prototype.setup = function () {
 
 // Set up the initial tiles to start the game with
 GameManager.prototype.addStartTiles = function () {
-  for (var i = 0; i < this.startTiles; i++) {
+  for (var i = 0; i < this.startTiles; ++i) {
     this.addRandomTile();
   }
 };
@@ -211,7 +211,7 @@ GameManager.prototype.getVector = function (direction) {
 GameManager.prototype.buildTraversals = function (vector) {
   var traversals = { x: [], y: [] };
 
-  for (var pos = 0; pos < this.size; pos++) {
+  for (var pos = 0; pos < this.size; ++pos) {
     traversals.x.push(pos);
     traversals.y.push(pos);
   }
@@ -249,12 +249,12 @@ GameManager.prototype.tileMatchesAvailable = function () {
 
   var tile;
 
-  for (var x = 0; x < this.size; x++) {
-    for (var y = 0; y < this.size; y++) {
+  for (var x = 0; x < this.size; ++x) {
+    for (var y = 0; y < this.size; ++y) {
       tile = this.grid.cellContent({ x: x, y: y });
 
       if (tile) {
-        for (var direction = 0; direction < 4; direction++) {
+        for (var direction = 0; direction < 4; ++direction) {
           var vector = self.getVector(direction);
           var cell   = { x: x + vector.x, y: y + vector.y };
 
