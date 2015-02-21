@@ -84,11 +84,11 @@ h1.title {
     color: rgba(119, 110, 101, 0.9);
     z-index: 100;
     -webkit-animation: move-up 600ms ease-in;
-    -moz-animation: move-up 600ms ease-in;
-    animation: move-up 600ms ease-in;
+       -moz-animation: move-up 600ms ease-in;
+            animation: move-up 600ms ease-in;
     -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    animation-fill-mode: both; }
+       -moz-animation-fill-mode: both;
+            animation-fill-mode: both; }
 
 .score-container:after {
   content: "Score"; }

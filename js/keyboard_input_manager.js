@@ -3,13 +3,13 @@ function KeyboardInputManager() {
 
   if (window.navigator.msPointerEnabled) {
     //Internet Explorer 10 style
-    this.eventTouchstart    = "MSPointerDown";
-    this.eventTouchmove     = "MSPointerMove";
-    this.eventTouchend      = "MSPointerUp";
+    this.eventTouchstart = "MSPointerDown";
+    this.eventTouchmove  = "MSPointerMove";
+    this.eventTouchend   = "MSPointerUp";
   } else {
-    this.eventTouchstart    = "touchstart";
-    this.eventTouchmove     = "touchmove";
-    this.eventTouchend      = "touchend";
+    this.eventTouchstart = "touchstart";
+    this.eventTouchmove  = "touchmove";
+    this.eventTouchend   = "touchend";
   }
 
   this.listen();
@@ -51,8 +51,8 @@ KeyboardInputManager.prototype.listen = function () {
 
   // Respond to direction keys
   document.addEventListener("keydown", function (event) {
-    var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
-                    event.shiftKey;
+    var modifiers = event.altKey  || event.ctrlKey
+                 || event.metaKey || event.shiftKey;
     var mapped    = map[event.which];
 
     if (!modifiers) {
@@ -60,11 +60,11 @@ KeyboardInputManager.prototype.listen = function () {
         event.preventDefault();
         self.emit("move", mapped);
       }
-    }
 
-    // R key restarts the game
-    if (!modifiers && event.which === 82) {
-      self.restart.call(self, event);
+      // R key restarts the game
+      if (event.which === 82) {
+        self.restart.call(self, event);
+      }
     }
   });
 
